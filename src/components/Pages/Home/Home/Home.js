@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useManageInventory from '../../../../hooks/useManageInventory';
 import ManageInventory from '../../ManageInventory/ManageInventory';
 import ManageInventoryDetails from '../../ManageInventoryDetails/ManageInventoryDetails';
+import Services from '../../Services/Services';
 import Banner from '../Banner/Banner';
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
             </div>
                 </div>
             </div>
+            <Services></Services>
         </div>
     );
 };
