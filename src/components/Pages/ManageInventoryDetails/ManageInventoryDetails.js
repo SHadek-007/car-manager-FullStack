@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 
 const ManageInventoryDetails = ({ product }) => {
-  const { _id, name, img, price, description, quantity, sname } = product;
+  const { name, img, price, description, quantity, sname } = product;
   return (
     <div>
       <table className=" border my-4 w-100">
