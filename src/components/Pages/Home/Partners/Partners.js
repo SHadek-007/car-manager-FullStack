@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const Partners = () => {
     return (
-        <div>
+        <div className='mb-5'>
             <Container>
             <h2 className='text-center mt-5'>Our Partners</h2>
             <p className='text-center my-3'>We'd like to share with you their top quality products and services that you will enjoy.</p>
