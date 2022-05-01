@@ -6,6 +6,8 @@ import ManageInventory from '../../ManageInventory/ManageInventory';
 import ManageInventoryDetails from '../../ManageInventoryDetails/ManageInventoryDetails';
 import Services from '../../Services/Services';
 import Banner from '../Banner/Banner';
+import OurDetails from '../OurDetails/OurDetails';
+import Partners from '../Partners/Partners';
 
 const Home = () => {
     const [products, setProducts] = useManageInventory();
@@ -30,6 +32,8 @@ const Home = () => {
                 </div>
             </div>
             <Services></Services>
+            <OurDetails></OurDetails>
+            <Partners></Partners>
         </div>
     );
 };
