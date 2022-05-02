@@ -17,7 +17,13 @@ const InventoryItemDetails = () => {
       method: "PUT",
     })
       .then((res) => res.json())
-      .then((data) => setProductDetail(data));
+      .then((data) => {
+        setProductDetail({
+          ...productDetail,
+          quantity: productDetail.quantity - 1,
+        });
+        // console.log(data);
+      });
   };
   const reStock = () => {
     const url = `http://localhost:5000/product/plus/${productDetail._id}`;
@@ -29,7 +35,12 @@ const InventoryItemDetails = () => {
       body: JSON.stringify({ quantity: inputQuantity }),
     })
       .then((res) => res.json())
-      .then((data) => setProductDetail(data));
+      .then((data) =>
+        setProductDetail({
+          ...productDetail,
+          quantity: productDetail.quantity + parseInt(inputQuantity),
+        })
+      );
   };
 
   return (
