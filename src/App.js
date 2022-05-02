@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Pages/Home/Home/Home';
+import InventoryItemDetails from './components/Pages/InventoryItemDetails/InventoryItemDetails';
 import Login from './components/Pages/Login/Login/Login';
 import Register from './components/Pages/Login/Register/Register';
 import ManageInventory from './components/Pages/ManageInventory/ManageInventory';
@@ -12,6 +13,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/inventory/:InventoryId' element={<InventoryItemDetails></InventoryItemDetails>}></Route>
         <Route path='/manage-inventory' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>

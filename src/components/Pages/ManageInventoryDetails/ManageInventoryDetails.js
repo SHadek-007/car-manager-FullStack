@@ -1,8 +1,15 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-const ManageInventoryDetails = ({ product }) => {
-  const { name, img, price, description, quantity, sname } = product;
+const ManageInventoryDetails = ({ product, handleIventoryDelete }) => {
+  const {_id, name, img, price, description, quantity, sname } = product;
+
+  const navigate = useNavigate();
+  const navigateToInventoryItemDetails = id =>{
+      navigate(`/inventory/${id}`)
+  }
+
   return (
     <div>
       <table className=" border my-4 w-100">
@@ -16,7 +23,8 @@ const ManageInventoryDetails = ({ product }) => {
             <p>Quantity: {quantity}</p>
             <p>Supplier Name: {sname}</p>
             <p><small>{description}</small></p>
-            <button className="btn btn-success">Stock Update</button>
+            <button onClick={()=>navigateToInventoryItemDetails(_id)} className="btn btn-success me-4">Stock Update</button>
+            <button onClick={()=>handleIventoryDelete(product._id)} className="btn btn-danger">Delete</button>
           </Col>
         </Row>
       </table>

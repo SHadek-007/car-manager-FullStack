@@ -101,7 +101,7 @@ const Register = () => {
           className="w-50 d-block mx-auto fs-5"
           type="submit"
         >
-          Sign Up
+          Register
         </Button>
       </Form>
       <p className="mt-3">
