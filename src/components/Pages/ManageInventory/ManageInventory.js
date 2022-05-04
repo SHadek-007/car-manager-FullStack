@@ -1,4 +1,5 @@
 import { Row, Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useManageInventory from "../../../hooks/useManageInventory";
 import ManageInventoryDetails from "../ManageInventoryDetails/ManageInventoryDetails";
 
@@ -7,7 +8,6 @@ const ManageInventory = () => {
 
   const handleIventoryDelete = (id) => {
     const proceed = window.confirm("Are You Sure Want to Delete?");
-    console.log(id);
     if (proceed) {
       const url = `http://localhost:5000/product/${id}`;
       fetch(url, {
@@ -15,7 +15,6 @@ const ManageInventory = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.deletedCount > 0) {
             const remainig = products.filter((product) => product._id !== id);
             setProducts(remainig);
@@ -41,10 +40,9 @@ const ManageInventory = () => {
           </thead>
           <tbody>
             {products.map((product) => (
-              <tr>
+              <tr key={product._id}>
                 <ManageInventoryDetails
                   handleIventoryDelete={handleIventoryDelete}
-                  key={product._id}
                   product={product}
                 ></ManageInventoryDetails>
               </tr>
@@ -52,6 +50,9 @@ const ManageInventory = () => {
           </tbody>
         </Table>
       </Row>
+      <div className="d-block mx-auto mb-4 text-center">
+        <button className="btn btn-info"><Link className="text-decoration-none text-white" to={'/addItem'}>Add Item</Link></button>
+      </div>
     </div>
   );
 };
