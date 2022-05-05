@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
   const [name, setName] = useState("");
   const [sname, setSname] = useState("");
   const [price, setPrice] = useState(0);
@@ -37,20 +40,19 @@ const AddItem = () => {
     // const description = e.target.description.value;
     // const photo = e.target.photo.value;
     const product = { name, sname, price, quantity, description, photo };
-    console.log(product);
-
     fetch("http://localhost:5000/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(product),
+      body: JSON.stringify({ ...product, email: user.email }),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
       });
   };
+
   return (
     <div className="w-50 mx-auto mt-5">
       <Form onSubmit={handleForm} className="border p-3">

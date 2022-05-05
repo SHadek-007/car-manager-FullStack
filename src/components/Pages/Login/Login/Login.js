@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import auth from '../../../../firebase.init';
-import Loading from '../../Shared/Loading/Loading';
-import logo from '../../../../images/logo.png';
-import './Login.css';
-import SocialLogin from '../SocialLogin/SocialLogin';
+import React, { useEffect, useState } from "react";
+import { Button, Form } from "react-bootstrap";
+import {
+  useAuthState,
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import auth from "../../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
+import logo from "../../../../images/logo.png";
+import "./Login.css";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
-    const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const location = useLocation();
@@ -22,17 +26,26 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-  useEffect(()=>{
+  useEffect(() => {
     if (user) {
-        navigate(from, { replace: true });
-      };
-  })
-  
+      fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ email: user.email }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("token", data.token);
+        });
+      navigate(from, { replace: true });
+    }
+  }, [user]);
+
   if (loading || sending) {
     return <Loading></Loading>;
-  };
-
-  
+  }
 
   let errorElement;
   if (error) {
@@ -41,7 +54,7 @@ const Login = () => {
         <p className="text-danger">Error: {error?.message}</p>
       </div>
     );
-  };
+  }
 
   const handleEmailBlur = (e) => {
     setEmail(e.target.value);
@@ -53,19 +66,19 @@ const Login = () => {
     navigate("/register");
   };
   const resetPassword = async () => {
-    if(email){
-        await sendPasswordResetEmail(email);
-        toast('Sent email');
-      }else{
-        toast('Please Enter Your Email Address');
-      }
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast("Please Enter Your Email Address");
+    }
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(email, password);
   };
-    return (
-        <div className="login-container p-4 rounded">
+  return (
+    <div className="login-container p-4 rounded">
       <div className="text-center mb-4">
         <img className="w-50 bg-danger" src={logo} alt="" />
       </div>
