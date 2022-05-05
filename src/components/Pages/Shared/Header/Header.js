@@ -5,6 +5,7 @@ import logo from "../../../../images/logo.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import auth from "../../../../firebase.init";
+import './Header.css';
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -13,12 +14,12 @@ const Header = () => {
     signOut(auth);
     localStorage.removeItem("token");
   };
-  
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand as={Link} to="/">
             <img src={logo} alt="Car Manager Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

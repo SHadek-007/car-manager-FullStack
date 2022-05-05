@@ -1,0 +1,16 @@
+.card-style{
+  background-color: blueviolet;
+}
+.name-text:hover{
+    color: #FF5400;
+}
+.button-style{
+  color: white;
+  background-color: #FF5400;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+.button-style:hover{
+  background-color: #d44904;
+}

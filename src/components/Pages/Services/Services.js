@@ -5,20 +5,21 @@ import inspection from '../../../images/services/customer-support.png';
 import serviceCar from '../../../images/services/service-car.png';
 import oilChange from '../../../images/services/oil-change.png';
 import steeringWheel from '../../../images/services/steering-wheel.png';
+import './Services.css';
 
 const Services = () => {
     return (
         <div>
             <Container>
-                <h2 className='text-center mt-5 mb-4'>Our <span className='text-danger'>Feature</span> Services</h2>
-                <p className='text-center my-3'>Eu delicata rationibus usu. Vix te putant utroque, ludus fabellas duo eu, his dico ut debet consectetuer.</p>
+                <h2 className='text-center mt-5 mb-4'>Our <span className='main-color'>Feature</span> Services</h2>
+                <p className='text-center my-3'>Get the best Results for Canadian Car Dealerships. Find what you are looking for! 99% Match on Canadian Car Dealerships.</p>
                 <div className='py-3 mt-5'>
                     <Row>
                         <Col xs={12} md={4}>
                             <Row>
                                 <Col xs={12} md={8}>
                                 <div>
-                                    <h5>Engine Upgrades</h5>
+                                    <h5 className=' name-text'>Engine Upgrades</h5>
                                     <p><small>We have the right caring, experience and dedicated professional for you.</small></p>
                                 </div>
                                 </Col>
@@ -31,7 +32,7 @@ const Services = () => {
                             <Row>
                             <Col xs={12} md={8}>
                                 <div>
-                                    <h5>Car Inspection</h5>
+                                    <h5 className=' name-text'>Car Inspection</h5>
                                     <p><small>We have the right caring, experience and dedicated professional for you.</small></p>
                                 </div>
                                 </Col>
@@ -51,7 +52,7 @@ const Services = () => {
                         <Row>
                                 <Col xs={12} md={8} className='order-2'>
                                 <div>
-                                    <h5>Car Oil Change</h5>
+                                    <h5 className=' name-text'>Car Oil Change</h5>
                                     <p><small>We have the right caring, experience and dedicated professional for you.</small></p>
                                 </div>
                                 </Col>
@@ -64,7 +65,7 @@ const Services = () => {
                             <Row>
                             <Col xs={12} md={8} className='order-2'>
                                 <div>
-                                    <h5>Power Steering</h5>
+                                    <h5 className=' name-text'>Power Steering</h5>
                                     <p><small>We have the right caring, experience and dedicated professional for you.</small></p>
                                 </div>
                                 </Col>

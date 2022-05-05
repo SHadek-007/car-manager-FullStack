@@ -17,25 +17,23 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      {/* <ManageInventory></ManageInventory> */}
       <div>
         <h2 className="text-center my-4">
-          Inventory List: {homeInventories.length}
+          Inventory: {homeInventories.length}
         </h2>
         <div>
           <Container>
-            <Row>
+            <Row xs={1} md={2} className="g-4">
               {homeInventories.map((product) => (
                 <InventoryDetailsHome key={product._id} product={product} />
               ))}
             </Row>
           </Container>
           <div className="text-center pb-4 mt-4">
-            <button className="b-style btn btn-success mt-4 px-3 py-2">
+            <button className="button-style mt-4 px-3 py-2">
               <Link
                 className="text-decoration-none text-white"
-                to={"/manage-inventory"}
-              >
+                to={"/manage-inventory"}>
                 Manage Inventories
               </Link>
             </button>
