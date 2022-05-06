@@ -6,13 +6,13 @@ const InventoryItemDetails = () => {
   const [productDetail, setProductDetail] = useState({});
   const [inputQuantity, setInputQuantity] = useState(0);
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${InventoryId}`)
+    fetch(`https://car-manager007.herokuapp.com/product/${InventoryId}`)
       .then((res) => res.json())
       .then((data) => setProductDetail(data));
   }, []);
 
   const delivered = () => {
-    const url = `http://localhost:5000/product/minus/${productDetail._id}`;
+    const url = `https://car-manager007.herokuapp.com/product/minus/${productDetail._id}`;
     fetch(url, {
       method: "PUT",
     })
@@ -26,7 +26,7 @@ const InventoryItemDetails = () => {
       });
   };
   const reStock = () => {
-    const url = `http://localhost:5000/product/plus/${productDetail._id}`;
+    const url = `https://car-manager007.herokuapp.com/product/plus/${productDetail._id}`;
     fetch(url, {
       method: "PUT",
       headers: {

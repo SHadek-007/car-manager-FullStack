@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import AddItem from "./components/Pages/AddItem/AddItem";
@@ -8,6 +9,7 @@ import Login from "./components/Pages/Login/Login/Login";
 import Register from "./components/Pages/Login/Register/Register";
 import ManageInventory from "./components/Pages/ManageInventory/ManageInventory";
 import MyItems from "./components/Pages/MyItems/MyItems";
+import RequireAuth from "./components/Pages/RequireAuth/RequireAuth";
 import Header from "./components/Pages/Shared/Header/Header";
 
 function App() {
@@ -23,13 +25,14 @@ function App() {
         ></Route>
         <Route
           path="/manage-inventory"
-          element={<ManageInventory></ManageInventory>}
+          element={<RequireAuth><ManageInventory></ManageInventory></RequireAuth>}
         ></Route>
-        <Route path="/my-items" element={<MyItems />}></Route>
-        <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+        <Route path="/my-items" element={<RequireAuth><MyItems /></RequireAuth>}></Route>
+        <Route path="/addItem" element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

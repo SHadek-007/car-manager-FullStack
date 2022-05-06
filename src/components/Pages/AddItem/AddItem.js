@@ -40,7 +40,7 @@ const AddItem = () => {
     // const description = e.target.description.value;
     // const photo = e.target.photo.value;
     const product = { name, sname, price, quantity, description, photo };
-    fetch("http://localhost:5000/product", {
+    fetch("https://car-manager007.herokuapp.com/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",

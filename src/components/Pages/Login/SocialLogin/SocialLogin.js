@@ -20,7 +20,7 @@ const SocialLogin = () => {
   useEffect(() => {
     if (user || gitUser) {
       const email = user ? user.user.email : gitUser.user.email;
-      fetch("http://localhost:5000/login", {
+      fetch("https://car-manager007.herokuapp.com/login", {
         method: "POST",
         headers: {
           "content-type": "application/json",

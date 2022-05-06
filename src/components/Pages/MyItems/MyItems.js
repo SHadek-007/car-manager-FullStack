@@ -6,7 +6,7 @@ const MyItems = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/my-items", {
+    fetch("https://car-manager007.herokuapp.com/my-items", {
       headers: {
         token: localStorage.getItem("token"),
       },
@@ -18,7 +18,7 @@ const MyItems = () => {
   const handleIventoryDelete = (id) => {
     const proceed = window.confirm("Are You Sure Want to Delete?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://car-manager007.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })

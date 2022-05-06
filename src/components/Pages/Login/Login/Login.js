@@ -6,7 +6,7 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import auth from "../../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import logo from "../../../../images/logo.png";
@@ -24,11 +24,12 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, , loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, sendError] =
+    useSendPasswordResetEmail(auth);
 
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   useEffect(() => {
     if (user) {
-      fetch("http://localhost:5000/login", {
+      fetch("https://car-manager007.herokuapp.com/login", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -48,10 +49,13 @@ const Login = () => {
   }
 
   let errorElement;
-  if (error) {
+
+  if (error || sendError) {
     errorElement = (
       <div>
-        <p className="text-danger">Error: {error?.message}</p>
+        <p className="text-danger">
+          Error: {error?.message || sendError?.message}
+        </p>
       </div>
     );
   }
@@ -68,9 +72,9 @@ const Login = () => {
   const resetPassword = async () => {
     if (email) {
       await sendPasswordResetEmail(email);
-      toast("Sent email");
+      alert("Sent email");
     } else {
-      toast("Please Enter Your Email Address");
+      alert("Please Enter Your Email Address");
     }
   };
   const handleFormSubmit = (e) => {
@@ -126,14 +130,13 @@ const Login = () => {
         <span
           className="text-primary"
           style={{ cursor: "pointer" }}
-          onClick={resetPassword}
+          onClick={() => resetPassword()}
         >
           Reset Password
         </span>
       </p>
       {errorElement}
       <SocialLogin></SocialLogin>
-      <ToastContainer />
     </div>
   );
 };
