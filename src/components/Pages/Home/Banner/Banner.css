@@ -4,7 +4,7 @@
     padding: 90px 0px;
 }
 .banner-text{
-    color: #5DA3FA;
+    color: #F4BE2C;
 }
 @media only screen and  (max-width:768px){
     .img-info{
@@ -12,7 +12,7 @@
     }
 }
 @media only screen and (min-width:769px) and (max-width:992px){
-    .text-info h5{
+    .banner-text h5{
         font-size: 15px;
     }
     .img-info{

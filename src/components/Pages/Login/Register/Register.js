@@ -56,7 +56,7 @@ const Register = () => {
   };
 
     return (
-        <div className="login-container p-4 rounded">
+        <div className="login-container p-4 rounded bg-light shadow">
       <div className="text-center mb-4">
         <img className="w-50 log-bg py-2 rounded" src={logo} alt="" />
       </div>

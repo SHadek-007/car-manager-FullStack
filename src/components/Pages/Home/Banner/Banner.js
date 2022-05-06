@@ -9,7 +9,7 @@ const Banner = () => {
         <div className='banner-container'>
             <Container>
                 <Row className='text-white gy-5'>
-                    <Col xs={12} md={5} className='text-info'>
+                    <Col xs={12} md={5} className='banner-text'>
                         <h4>We Don't Sell Car,</h4>
                         <h1 className='display-3 fw-bold'>We Sell a Dream</h1>
                         <div className=''>
