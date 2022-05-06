@@ -5,7 +5,7 @@ const Partners = () => {
     return (
         <div className='mb-5'>
             <Container>
-            <h2 className='text-center mt-5'>Our Partners</h2>
+            <h2 className='text-center mt-5 name-text'>Our Partners</h2>
             <p className='text-center my-3'>We'd like to share with you their top quality products and services that you will enjoy.</p>
             <Row className='gy-4 text-center my-4'>
                 <Col md={3}>

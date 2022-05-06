@@ -17,23 +17,23 @@ const Services = () => {
                     <Row>
                         <Col xs={12} md={4}>
                             <Row>
-                                <Col xs={12} md={8}>
-                                <div>
+                                <Col xs={12} md={8} className='order-en'>
+                                <div className='' >
                                     <h5 className=' name-text'>Engine Upgrades</h5>
                                     <p><small>We have the right caring, experience and dedicated professional for you.</small></p>
                                 </div>
                                 </Col>
-                                <Col xs={12} md={4} className='d-flex align-items-center'>
-                                    <div className='border rounded-circle p-2 shadow'>
+                                <Col xs={12} md={4} className=' d-flex align-items-center'>
+                                    <div className=' border rounded-circle p-2 shadow'>
                                     <img src={engine} alt="" />
                                     </div>
                                 </Col>
                             </Row>
                             <Row>
-                            <Col xs={12} md={8}>
+                            <Col xs={12} md={8} className='order-in'>
                                 <div>
                                     <h5 className=' name-text'>Car Inspection</h5>
-                                    <p><small>We have the right caring, experience and dedicated professional for you.</small></p>
+                                    <p><small>Vehicle inspection is a procedure mandated by national or subnational governments in many countries.</small></p>
                                 </div>
                                 </Col>
                                 <Col xs={12} md={4} className='d-flex align-items-center'>
@@ -43,17 +43,17 @@ const Services = () => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col xs={12} md={4}>
+                        <Col xs={12} md={4} className='order2'>
                             <div>
                                 <img className='w-100' src={serviceCar} alt="" />
                             </div>
                         </Col>
-                        <Col xs={1} md={4}>
+                        <Col xs={12} md={4}>
                         <Row>
                                 <Col xs={12} md={8} className='order-2'>
                                 <div>
                                     <h5 className=' name-text'>Car Oil Change</h5>
-                                    <p><small>We have the right caring, experience and dedicated professional for you.</small></p>
+                                    <p><small>Buy the Right Oil and Oil Filter While it might seem like a money-saver, an economy oil filter is typic</small></p>
                                 </div>
                                 </Col>
                                 <Col xs={12} md={4} className='d-flex align-items-center order-1'>
@@ -66,7 +66,7 @@ const Services = () => {
                             <Col xs={12} md={8} className='order-2'>
                                 <div>
                                     <h5 className=' name-text'>Power Steering</h5>
-                                    <p><small>We have the right caring, experience and dedicated professional for you.</small></p>
+                                    <p><small>Power steering is a system that reduces the effort required of the driver to turn the steering wheel.</small></p>
                                 </div>
                                 </Col>
                                 <Col xs={12} md={4} className='d-flex align-items-center order-1'>

@@ -4,3 +4,9 @@
 .footer2{
     background-color: #151515;
 }
+.footer-color{
+    color: white;
+}
+.footer-color:hover{
+    color: #FF5400;
+}

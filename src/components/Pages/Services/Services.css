@@ -1,3 +1,14 @@
 .main-color{
     color: #FF5400;
 }
+@media only screen and (max-width:576px) {
+    .order2{
+        order: 3;
+    }
+    .order-en{
+        order: 2;
+    }
+    .order-in{
+        order: 2;
+    }
+}

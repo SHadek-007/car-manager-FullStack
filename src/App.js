@@ -9,6 +9,7 @@ import Login from "./components/Pages/Login/Login/Login";
 import Register from "./components/Pages/Login/Register/Register";
 import ManageInventory from "./components/Pages/ManageInventory/ManageInventory";
 import MyItems from "./components/Pages/MyItems/MyItems";
+import NotFound from "./components/Pages/NotFound/NotFound";
 import RequireAuth from "./components/Pages/RequireAuth/RequireAuth";
 import Header from "./components/Pages/Shared/Header/Header";
 
@@ -21,7 +22,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route
           path="/inventory/:InventoryId"
-          element={<InventoryItemDetails></InventoryItemDetails>}
+          element={<RequireAuth><InventoryItemDetails></InventoryItemDetails></RequireAuth>}
         ></Route>
         <Route
           path="/manage-inventory"
@@ -31,6 +32,7 @@ function App() {
         <Route path="/addItem" element={<RequireAuth><AddItem></AddItem></RequireAuth>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>
