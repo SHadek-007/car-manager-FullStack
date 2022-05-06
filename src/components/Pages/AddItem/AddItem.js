@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast, { Toaster } from "react-hot-toast";
 import auth from "../../../firebase.init";
 
 const AddItem = () => {
@@ -33,12 +34,6 @@ const AddItem = () => {
 
   const handleForm = (e) => {
     e.preventDefault();
-    // const name = e.target.name.value;
-    // const sname = e.target.sname.value;
-    // const price = e.target.price.value;
-    // const quantity = e.target.quantity.value;
-    // const description = e.target.description.value;
-    // const photo = e.target.photo.value;
     const product = { name, sname, price, quantity, description, photo };
     fetch("https://car-manager007.herokuapp.com/product", {
       method: "POST",
@@ -49,7 +44,7 @@ const AddItem = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        toast("Add Item Successfully");
       });
   };
 
@@ -112,6 +107,7 @@ const AddItem = () => {
           Add Item
         </Button>
       </Form>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };

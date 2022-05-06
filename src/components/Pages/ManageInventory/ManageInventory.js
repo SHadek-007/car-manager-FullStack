@@ -1,4 +1,5 @@
 import { Row, Table } from "react-bootstrap";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import useManageInventory from "../../../hooks/useManageInventory";
 import ManageInventoryDetails from "../ManageInventoryDetails/ManageInventoryDetails";
@@ -20,7 +21,8 @@ const ManageInventory = () => {
             setProducts(remainig);
           }
         });
-      console.log("deleting user id", id);
+      toast("Deleting Inventory Successfully");
+      
     }
   };
 
@@ -51,12 +53,16 @@ const ManageInventory = () => {
         </Table>
       </Row>
       <div className="d-block mx-auto mb-4 text-center">
-        <button className="btn btn-info">
+        <button className="button-style">
           <Link className="text-decoration-none text-white" to={"/addItem"}>
-            Add Item
+            Add New Item
           </Link>
         </button>
       </div>
+      <Toaster
+      position="top-right"
+      reverseOrder={false}
+      />
     </div>
   );
 };

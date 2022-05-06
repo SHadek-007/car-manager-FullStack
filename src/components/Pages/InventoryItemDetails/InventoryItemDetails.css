@@ -1,0 +1,12 @@
+.inventory-style{
+    width: 50%;
+}
+.items-input{
+    border: 1px solid lightskyblue;
+    outline: none;
+}
+@media only screen and (max-width:567px) {
+    .inventory-style{
+        width: 95%;
+    }
+}

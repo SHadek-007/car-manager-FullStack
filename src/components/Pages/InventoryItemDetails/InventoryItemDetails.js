@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import './InventoryItemDetails.css';
 
 const InventoryItemDetails = () => {
   const { InventoryId } = useParams();
@@ -22,7 +23,6 @@ const InventoryItemDetails = () => {
           ...productDetail,
           quantity: productDetail.quantity - 1,
         });
-        // console.log(data);
       });
   };
   const reStock = () => {
@@ -45,7 +45,7 @@ const InventoryItemDetails = () => {
 
   return (
     <div className="">
-      <div className="card w-50 mx-auto">
+      <div className="card mx-auto my-4 inventory-style bg-light shadow">
         <img src={productDetail.img} alt="" />
         <div className="card-body">
           <h2 className="card-title">{productDetail.name}</h2>
@@ -56,10 +56,9 @@ const InventoryItemDetails = () => {
           <button onClick={delivered} className="btn btn-danger">
             Delivered
           </button>
-        </div>
-        <div>
-          <h4>Re-Stock Item</h4>
-          <input
+          <div className="text-center mx-auto border p-2 mt-2 bg-secondary rounded">
+          <h6 className="text-white">Re-Stock Item</h6>
+          <input className="items-input ps-2 py-1 rounded "
             onBlur={(e) => {
               setInputQuantity(e.target.value);
             }}
@@ -68,9 +67,19 @@ const InventoryItemDetails = () => {
             placeholder="Add Quantity"
           />
           <br />
-          <button onClick={() => reStock()} className="btn btn-success">
+          <button onClick={() => reStock()} className="button-style mt-2">
             Add Now
           </button>
+        </div>
+        <div className="text-center ">
+            <button className="button-style mt-2 px-3 py-2">
+              <Link
+                className="text-decoration-none text-white"
+                to={"/manage-inventory"}>
+                Manage Inventories
+              </Link>
+            </button>
+          </div>
         </div>
       </div>
     </div>

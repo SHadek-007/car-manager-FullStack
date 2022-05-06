@@ -6,7 +6,6 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import auth from "../../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import logo from "../../../../images/logo.png";
@@ -104,9 +103,6 @@ const Login = () => {
             required
           />
         </Form.Group>
-        {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group> */}
         <Button
           variant="danger"
           className="w-50 d-block mx-auto fs-5"
