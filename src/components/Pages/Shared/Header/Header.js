@@ -16,8 +16,8 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img src={logo} alt="Car Manager Logo" />
@@ -39,7 +39,7 @@ const Header = () => {
                     My Items
                   </Nav.Link>
                   <button
-                    className="btn btn-link text-decoration-none text-white header-style text-start ps-0 ps-lg-2"
+                    className="btn btn-link text-decoration-none text-white-50 header-style text-start ps-0 ps-lg-2"
                     onClick={handleSignOut}
                   >
                     Logout
@@ -47,21 +47,21 @@ const Header = () => {
                 </>
               ) : (
                 <Nav.Link
-                  className="header-style text-white  me-3"
+                  className="header-style text-white-50  me-3"
                   as={Link}
                   to="login"
                 >
                   Login
                 </Nav.Link>
               )}
-              <Nav.Link className="header-style  ms-3" as={Link} to="register">
+              <Nav.Link className="header-style ms-sm-0 ms-lg-3" as={Link} to="register">
                 Register
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+    </>
   );
 };
 
