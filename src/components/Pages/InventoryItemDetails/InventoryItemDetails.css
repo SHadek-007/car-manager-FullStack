@@ -10,3 +10,13 @@
         width: 95%;
     }
 }
+@media only screen and  (min-width:577px) and (max-width:768px) {
+    .inventory-style{
+        width: 95%;
+    }
+}
+@media only screen and (min-width:769px) and (max-width:992px){
+    .inventory-style{
+        width: 70%;
+    }
+}

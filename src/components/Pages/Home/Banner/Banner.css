@@ -6,3 +6,16 @@
 .banner-text{
     color: #5DA3FA;
 }
+@media only screen and  (max-width:768px){
+    .img-info{
+        order: 2;
+    }
+}
+@media only screen and (min-width:769px) and (max-width:992px){
+    .text-info h5{
+        font-size: 15px;
+    }
+    .img-info{
+        order: 2;
+    }
+}

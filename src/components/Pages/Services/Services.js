@@ -43,7 +43,7 @@ const Services = () => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col xs={12} md={4} className='order2'>
+                        <Col xs={12} md={4} className='order2 d-flex align-items-center'>
                             <div>
                                 <img className='w-100' src={serviceCar} alt="" />
                             </div>

@@ -61,7 +61,7 @@ const AddItem = () => {
             name="name"
             onBlur={handleName}
             type="text"
-            placeholder="Name"
+            placeholder="Name" required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicText">
@@ -85,7 +85,7 @@ const AddItem = () => {
             name="quantity"
             onBlur={handleQuantity}
             type="number"
-            placeholder="Quantity"
+            placeholder="Quantity" required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicText">

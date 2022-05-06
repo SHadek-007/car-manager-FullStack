@@ -12,3 +12,14 @@
         order: 2;
     }
 }
+@media only screen and  (min-width:577px) and (max-width:768px) {
+    .order2{
+        order: 3;
+    }
+    .order-en{
+        order: 2;
+    }
+    .order-in{
+        order: 2;
+    }
+}
