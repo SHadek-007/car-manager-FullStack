@@ -2,18 +2,22 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './Banner.css';
 import image1 from '../../../../images/right-image-search.png';
+import logo from '../../../../images/logo.png';
 
 const Banner = () => {
     return (
         <div className='banner-container'>
             <Container>
                 <Row className='text-white'>
-                    <Col xs={12} md={5}>
-                        <h4>Choose Your</h4>
-                        <h1 className='display-3'>Dream Car</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, eligendi officia? Aspernatur, ullam accusantium voluptatem labore atque consequatur obcaecati vero officiis nesciunt perferendis non possimus nam architecto nobis recusandae repellendus.</p>
+                    <Col xs={12} md={5} className='text-info'>
+                        <h4>We Don't Sell Car,</h4>
+                        <h1 className='display-3 fw-bold'>We Sell a Dream</h1>
+                        <div className=''>
+                        <img src={logo} alt="" />
+                        </div>
+                        <h5 className='mt-2'>With Thousands of Car <br /> We Have Just The Right One For You.</h5>
                     </Col>
-                    <Col xs={12} md={7} className=''>
+                    <Col xs={12} md={7} className='d-flex align-items-center'>
                         <div className=''>
                             <img className='w-100' src={image1} alt="" />
                         </div>

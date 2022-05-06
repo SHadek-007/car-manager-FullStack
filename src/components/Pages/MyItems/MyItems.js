@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Row, Table } from "react-bootstrap";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const MyItems = () => {
@@ -29,7 +30,7 @@ const MyItems = () => {
             setProducts(remainig);
           }
         });
-      console.log("deleting user id", id);
+      toast("Delete My Items Successfully");
     }
   };
 
@@ -66,12 +67,16 @@ const MyItems = () => {
         </Table>
       </Row>
       <div className="d-block mx-auto mb-4 text-center">
-        <button className="btn btn-info">
+        <button className="button-style">
           <Link className="text-decoration-none text-white" to={"/addItem"}>
             Add Item
           </Link>
         </button>
       </div>
+      <Toaster
+      position="top-right"
+      reverseOrder={false}
+      />
     </div>
   );
 };

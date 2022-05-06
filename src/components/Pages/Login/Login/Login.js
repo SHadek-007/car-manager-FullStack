@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import {
   useAuthState,
   useSendPasswordResetEmail,
@@ -11,6 +11,7 @@ import Loading from "../../Shared/Loading/Loading";
 import logo from "../../../../images/logo.png";
 import "./Login.css";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const [user] = useAuthState(auth);
@@ -71,9 +72,9 @@ const Login = () => {
   const resetPassword = async () => {
     if (email) {
       await sendPasswordResetEmail(email);
-      alert("Sent email");
+      toast("Sent email");
     } else {
-      alert("Please Enter Your Email Address");
+      toast("Please Enter Your Email Address");
     }
   };
   const handleFormSubmit = (e) => {
@@ -83,7 +84,7 @@ const Login = () => {
   return (
     <div className="login-container p-4 rounded">
       <div className="text-center mb-4">
-        <img className="w-50 bg-danger" src={logo} alt="" />
+        <img className="w-50 log-bg py-2 rounded" src={logo} alt="" />
       </div>
       <Form onSubmit={handleFormSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -103,13 +104,12 @@ const Login = () => {
             required
           />
         </Form.Group>
-        <Button
-          variant="danger"
-          className="w-50 d-block mx-auto fs-5"
+        <button
+          className="w-50 d-block mx-auto fs-5 button-style"
           type="submit"
         >
           Login
-        </Button>
+        </button>
       </Form>
       <p className="mt-3">
         New to car manager?
@@ -133,6 +133,7 @@ const Login = () => {
       </p>
       {errorElement}
       <SocialLogin></SocialLogin>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };

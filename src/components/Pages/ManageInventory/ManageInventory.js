@@ -21,7 +21,7 @@ const ManageInventory = () => {
             setProducts(remainig);
           }
         });
-      toast("Deleting Inventory Successfully");
+      toast("Delete Inventory Successfully");
       
     }
   };

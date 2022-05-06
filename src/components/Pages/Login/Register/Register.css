@@ -1,0 +1,10 @@
+.reg-btn{
+    color: white;
+    background-color: #FF5400;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+.reg-btn:hover{
+    background-color: #d44904;
+  }

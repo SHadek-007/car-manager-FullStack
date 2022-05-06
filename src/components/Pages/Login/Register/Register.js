@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import auth from '../../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import logo from '../../../../images/logo.png';
-import { Button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import './Register.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -58,7 +58,7 @@ const Register = () => {
     return (
         <div className="login-container p-4 rounded">
       <div className="text-center mb-4">
-        <img className="w-50 bg-danger" src={logo} alt="" />
+        <img className="w-50 log-bg py-2 rounded" src={logo} alt="" />
       </div>
       <Form onSubmit={handleFormSubmit}>
         <Form.Group className="mb-3" controlId="formBasicText">
@@ -95,14 +95,13 @@ const Register = () => {
             label="Accept Terms & Conditions"
           />
         </Form.Group>
-        <Button
+        <button
           disabled={!agree}
-          variant="danger"
-          className="w-50 d-block mx-auto fs-5"
+          className="w-50 d-block mx-auto fs-5 reg-btn"
           type="submit"
         >
           Register
-        </Button>
+        </button>
       </Form>
       <p className="mt-3">
         Already Have an Account?

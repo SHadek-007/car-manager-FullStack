@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast, { Toaster } from "react-hot-toast";
 import auth from "../../../firebase.init";
+import logo from '../../../images/logo.png';
+import './AddItem.css';
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
@@ -49,8 +51,11 @@ const AddItem = () => {
   };
 
   return (
-    <div className="w-50 mx-auto mt-5">
-      <Form onSubmit={handleForm} className="border p-3">
+    <div className="inventory-style mx-auto mt-5">
+      <Form onSubmit={handleForm} className="border p-3 rounded bg-light shadow">
+        <div className="my-3 text-center">
+          <img className="logo-bg py-2 rounded" src={logo} alt="" />
+        </div>
         <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Control
             name="name"
@@ -99,13 +104,12 @@ const AddItem = () => {
             placeholder="Photo URL"
           />
         </Form.Group>
-        <Button
-          className="text-center d-block mx-auto"
-          variant="primary"
+        <button
+          className="button-style text-center d-block mx-auto"
           type="submit"
         >
           Add Item
-        </Button>
+        </button>
       </Form>
       <Toaster position="top-right" reverseOrder={false} />
     </div>
