@@ -54,8 +54,11 @@ const Header = () => {
                   Login
                 </Nav.Link>
               )}
-              <Nav.Link className="header-style ms-sm-0 ms-lg-3" as={Link} to="register">
+              <Nav.Link className="header-style me-2 " as={Link} to="register">
                 Register
+              </Nav.Link>
+              <Nav.Link className="header-style ms-sm-0 ms-lg-3" as={Link} to="about">
+                About
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

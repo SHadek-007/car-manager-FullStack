@@ -5,7 +5,7 @@ import useManageInventory from "../../../../hooks/useManageInventory";
 // import ManageInventory from "../../ManageInventory/ManageInventory";
 // import ManageInventoryDetails from "../../ManageInventoryDetails/ManageInventoryDetails";
 import Services from "../../Services/Services";
-import Footer from "../../Shared/Footer/Footer";
+import Loading from "../../Shared/Loading/Loading";
 import Banner from "../Banner/Banner";
 import InventoryDetailsHome from "../InventoryDetailsHome/InventoryDetailsHome";
 import OurDetails from "../OurDetails/OurDetails";
@@ -43,7 +43,6 @@ const Home = () => {
       <Services></Services>
       <OurDetails></OurDetails>
       <Partners></Partners>
-      <Footer></Footer>
     </div>
   );
 };

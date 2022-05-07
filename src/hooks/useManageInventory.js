@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useManageInventory = () =>{
-    const [products, setProducts] = useState([]);
+    const [products, setProducts ] = useState([]);
     useEffect(()=>{
         fetch('https://car-manager007.herokuapp.com/product')
         .then(res => res.json())
