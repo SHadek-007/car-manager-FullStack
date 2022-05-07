@@ -2,6 +2,9 @@
 
 [Live Site Link](https://car-manager-client.web.app/)
 
+## Car Manager Details
+Car Manager - Choose Your Dream Car. This is a Warehouse Management MERN Stack Website. You Can Manage Your Warehouse with this. It is very easy to use. You can add, delete, manage your products easly. It is a best choose for your warehouse management.
+
 ## Car Manager All Feature's
 * Super Fast Data Load
 * Using Json Web Token
