@@ -51,7 +51,7 @@ const AddItem = () => {
   };
 
   return (
-    <div className="inventory-style mx-auto mt-5">
+    <div className="inventory-style mx-auto my-5">
       <Form onSubmit={handleForm} className="border p-3 rounded bg-light shadow">
         <div className="my-3 text-center">
           <img className="logo-bg py-2 rounded" src={logo} alt="" />

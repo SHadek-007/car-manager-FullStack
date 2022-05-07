@@ -46,6 +46,11 @@ const InventoryItemDetails = () => {
 
   return (
     <div className="">
+      { (Object.keys(productDetail).length  === 0) && 
+      <div style={{height:'150px'}} className='w-100 d-flex justify-content-center align-items-center'>
+      <Spinner animation="border" variant="danger" />
+  </div>
+      }
       <div className="card mx-auto my-4 inventory-style bg-light shadow">
         <img src={productDetail.img} alt="" />
         <div className="card-body">

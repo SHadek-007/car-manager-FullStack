@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 const Blogs = () => {
   return (
-    <div>
+    <div className="my-4">
       <Container>
         <h2>1. Differences Between SQL and NoSQL Databases ?</h2>
         <p>
