@@ -1,4 +1,4 @@
-import { Row, Table } from "react-bootstrap";
+import { Row, Spinner, Table } from "react-bootstrap";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import useManageInventory from "../../../hooks/useManageInventory";
@@ -31,6 +31,11 @@ const ManageInventory = () => {
       <h2 className="text-center my-5">
         All Inventory List: {products.length}
       </h2>
+      {products.length <= 0 && (
+          <div style={{height:'150px'}} className='w-100 d-flex justify-content-center align-items-center'>
+          <Spinner animation="border" variant="danger" />
+      </div>
+        )}
       <Row>
         <Table className="border">
           <thead>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useManageInventory from "../../../../hooks/useManageInventory";
 // import ManageInventory from "../../ManageInventory/ManageInventory";
@@ -21,6 +21,12 @@ const Home = () => {
         <h2 className="text-center my-4">
           Inventory: {homeInventories.length}
         </h2>
+
+        {products.length <= 0 && (
+          <div style={{height:'150px'}} className='w-100 d-flex justify-content-center align-items-center'>
+          <Spinner animation="border" variant="danger" />
+      </div>
+        )}
         <div>
           <Container>
             <Row xs={1} md={1} xl={2} className="g-4">
@@ -33,7 +39,8 @@ const Home = () => {
             <button className="button-style mt-4 px-3 py-2">
               <Link
                 className="text-decoration-none text-white"
-                to={"/manage-inventory"}>
+                to={"/manage-inventory"}
+              >
                 Manage Inventories
               </Link>
             </button>
